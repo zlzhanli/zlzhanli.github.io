@@ -1,92 +1,134 @@
-<!DOCTYPE html>
-<html>
-<head><meta name="generator" content="Hexo 3.8.0">
-  <meta charset="utf-8">
-  
 
+
+
+
+
+
+
+<!doctype html>
+<html lang>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta http-equiv="Content-Type" content="text/html" charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   
-  <title>Hibernate | Hexo</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Hibernate 介绍完成数据持久的框架Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行了轻量级的对象封装，使 Java 程序员可以随心所欲的使用对象编程思维来操纵数据库。它不仅提供了从Java类到数据表之间的映射，也提供了数据查询和恢复机制。相对于使用 JDBC 和 SQL来手工操作数据库，Hibernate可以大大减少操作数据库的工作量。另外,Hibernate可以利用">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Hibernate">
-<meta property="og:url" content="http://yoursite.com/2019/03/24/Hibernate/index.html">
-<meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Hibernate 介绍完成数据持久的框架Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行了轻量级的对象封装，使 Java 程序员可以随心所欲的使用对象编程思维来操纵数据库。它不仅提供了从Java类到数据表之间的映射，也提供了数据查询和恢复机制。相对于使用 JDBC 和 SQL来手工操作数据库，Hibernate可以大大减少操作数据库的工作量。另外,Hibernate可以利用">
-<meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2019-03-24T10:08:50.565Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hibernate">
-<meta name="twitter:description" content="Hibernate 介绍完成数据持久的框架Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行了轻量级的对象封装，使 Java 程序员可以随心所欲的使用对象编程思维来操纵数据库。它不仅提供了从Java类到数据表之间的映射，也提供了数据查询和恢复机制。相对于使用 JDBC 和 SQL来手工操作数据库，Hibernate可以大大减少操作数据库的工作量。另外,Hibernate可以利用">
-  
-    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  <meta name="author" content="zl">
   
   
-    <link rel="icon" href="/favicon.png">
   
   
-    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+    <meta name="description" content="Hibernate 介绍完成数据持久的框架Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行了轻量级的对象封装，使 Java 程序员可以随心所欲的使用对象编程思维来操纵数据库。它不仅提供了从Java类到数据表之间的映射，也提供了数据查询和恢复机制。相对于使用 JDBC 和 SQL来手工操作数据库，Hibernate可以大大减少操作数据库的工作量。另外,Hibernate可...">
   
-  <link rel="stylesheet" href="/css/style.css">
+  <title>Hibernate [ Zl ]</title>
+  
+  
+  
+  <link rel="stylesheet" href="/css/random.css">
+<link rel="stylesheet" href="/css/vegas.min.css">
+<link rel="stylesheet" href="/css/highlight-railscasts.css">
+<link rel="stylesheet" href="/css/jquery.fancybox.css">
+<link rel="stylesheet" href="/css/iconfont/iconfont.css">
+<link rel="stylesheet" href="/css/jquery.fancybox-thumbs.css">
+<link rel="stylesheet" href="/css/plyr.css">
+  
 </head>
-</html>
+
 <body>
-  <div id="container">
-    <div id="wrap">
-      <header id="header">
-  <div id="banner"></div>
-  <div id="header-outer" class="outer">
-    <div id="header-title" class="inner">
-      <h1 id="logo-wrap">
-        <a href="/" id="logo">Hexo</a>
-      </h1>
-      
+<div class="side-navigate hide-area">
+  
+  
+    <div class="item next">
+      <a href="/2019/03/21/hello-world/">
+        <div class="item-icon"></div>
+      </a>
+      <div class="item-title">
+        Hello World
+      </div>
     </div>
-    <div id="header-inner" class="inner">
-      <nav id="main-nav">
-        <a id="main-nav-toggle" class="nav-icon"></a>
+  
+</div>
+<div id="outer-container" class="hide-area">
+<div id="container">
+  <div id="menu-outer" class="slide-down">
+    <div id="menu-inner">
+      <div id="brand">
         
-          <a class="main-nav-link" href="/">Home</a>
+        <a onclick="openUserCard()">
+          <img id="avatar" src="/img/touxiang.jpg">
+          <div id="homelink">Zl</div>
+        </a>
+      </div>
+      <div id="menu-list">
+        <ul>
         
-          <a class="main-nav-link" href="/archives">Archives</a>
         
-      </nav>
-      <nav id="sub-nav">
+          
+            <li>
+          
+            <a href="/">Home</a>
+            
+          </li>
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          
+            <li>
+          
+            <a href="/archives">Archives</a>
+            
+          </li>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
-      </nav>
-      <div id="search-form-wrap">
-        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+          
+            <li>
+          
+            <a href="/tags">Tags</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/categories">Categories</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="/about">About</a>
+            
+          </li>
+        
+          
+            <li>
+          
+            <a href="https://github.com/zlzhanli">Github</a>
+            
+          </li>
+        
+        </ul>
+      </div>
+      <div id="show-menu">
+        <button>Menu</button>
       </div>
     </div>
   </div>
-</header>
-      <div class="outer">
-        <section id="main"><article id="post-Hibernate" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2019/03/24/Hibernate/" class="article-date">
-  <time datetime="2019-03-24T09:39:29.000Z" itemprop="datePublished">2019-03-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Hibernate
-    </h1>
+
+  <div id="content-outer">
+    <div id="content-inner">
+      
+      
   
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
+  <article id="post">
+    <h1>Hibernate</h1>
+    <p class="page-title-sub">
+      <span id="post-title-date">Created at 2019-03-24</span>
       
-        <h1 id="Hibernate-介绍"><a href="#Hibernate-介绍" class="headerlink" title="Hibernate 介绍"></a>Hibernate 介绍</h1><p>完成数据持久的框架Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行了轻量级的对象封装，使 Java 程序员可以随心所欲的使用对象编程思维来操纵数据库。它不仅提供了从Java类到数据表之间的映射，也提供了数据查询和恢复机制。相对于使用 JDBC 和 SQL来手工操作数据库，Hibernate可以大大减少操作数据库的工作量。另外,Hibernate可以利用代理模式来简化载入类的过程，这将大大减少利用 Hibernate从数据库提取数据的代码的编写量，从而节约开发时间和开发成本 Hibernat可以和多种Web 服务器或者应用服务器良好集成，如今已经支持几乎所有的流行的数据库服务器。</p>
+        <span id="post-title-updated">Updated at 2019-03-24</span>
+      
+      
+      
+    </p>
+    
+    <h1 id="Hibernate-介绍"><a href="#Hibernate-介绍" class="headerlink" title="Hibernate 介绍"></a>Hibernate 介绍</h1><p>完成数据持久的框架Hibernate是一个开放源代码的对象关系映射框架，它对JDBC进行了轻量级的对象封装，使 Java 程序员可以随心所欲的使用对象编程思维来操纵数据库。它不仅提供了从Java类到数据表之间的映射，也提供了数据查询和恢复机制。相对于使用 JDBC 和 SQL来手工操作数据库，Hibernate可以大大减少操作数据库的工作量。另外,Hibernate可以利用代理模式来简化载入类的过程，这将大大减少利用 Hibernate从数据库提取数据的代码的编写量，从而节约开发时间和开发成本 Hibernat可以和多种Web 服务器或者应用服务器良好集成，如今已经支持几乎所有的流行的数据库服务器。</p>
 <h1 id="Orm-称对象关系映射"><a href="#Orm-称对象关系映射" class="headerlink" title="Orm 称对象关系映射"></a>Orm 称对象关系映射</h1><p><strong>ORM（Object RelationalMapping）框架采用元数据来描述对象一关系映射细节，元数据一般采用XML格式(注解方式)，并且存放在专门的对象一映射文件中。</strong></p>
 <h1 id="JPA"><a href="#JPA" class="headerlink" title="JPA"></a>JPA</h1><h2 id="JPA概述"><a href="#JPA概述" class="headerlink" title="JPA概述"></a>JPA概述</h2><p>JPA(Java Persistence API)作为Java EE 5.0平台标准的ORM规范，将得到所有Java EE服务器的支持。</p>
 <p>Sun这次吸取了之前EJB规范惨痛失败的经历，在充分吸收现有ORM框架的基础上，得到了一个易于使用、伸缩性强的ORM规范。</p>
@@ -104,103 +146,181 @@
 <h1 id="通过session的api提供的增删改查相关操作"><a href="#通过session的api提供的增删改查相关操作" class="headerlink" title="通过session的api提供的增删改查相关操作"></a>通过session的api提供的增删改查相关操作</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">		<span class="comment">//读取加载配置文件  获取核心配置信息</span></span><br><span class="line">		Configuration cfg = <span class="keyword">new</span> Configuration().configure();</span><br><span class="line">		<span class="comment">//创建一个链接工厂</span></span><br><span class="line">		SessionFactory sf = cfg.buildSessionFactory();</span><br><span class="line">		<span class="comment">//获取链接</span></span><br><span class="line">		Session session = sf.openSession();</span><br><span class="line">		<span class="comment">//增删改查  通过session的api提供</span></span><br><span class="line">		<span class="comment">//查询一条数据</span></span><br><span class="line">		<span class="comment">/*News news = (News) session.get(News.class, 1);</span></span><br><span class="line"><span class="comment">		System.out.println(news.getTitle());</span></span><br><span class="line"><span class="comment">		session.close();*/</span></span><br><span class="line">		</span><br><span class="line">		<span class="comment">//获取事务</span></span><br><span class="line">		Transaction tx = session.getTransaction();</span><br><span class="line">		<span class="comment">//事务开启</span></span><br><span class="line">		tx.begin();</span><br><span class="line">		</span><br><span class="line">		<span class="comment">//先获取持久化对象</span></span><br><span class="line">		News news = (News) session.get(News.class, <span class="number">2</span>);</span><br><span class="line">		<span class="comment">//delete数据 </span></span><br><span class="line">		<span class="comment">//session.delete(news);</span></span><br><span class="line">		</span><br><span class="line">		news.setTitle(<span class="string">"杀出重围"</span>);</span><br><span class="line">		<span class="comment">//修改</span></span><br><span class="line">		session.update(news);</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		<span class="comment">/*//创建news对象</span></span><br><span class="line"><span class="comment">		News news = new News("qqq", new Timestamp(new Date().getTime()));</span></span><br><span class="line"><span class="comment">		//保存到数据库</span></span><br><span class="line"><span class="comment">		session.save(news);*/</span></span><br><span class="line">		<span class="comment">//手动提交事务</span></span><br><span class="line">		tx.commit();</span><br><span class="line">		<span class="comment">//关闭session   一定要关</span></span><br><span class="line">		session.close();</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 <h1 id="HQL语句"><a href="#HQL语句" class="headerlink" title="HQL语句"></a>HQL语句</h1><h2 id="HQL语句的增删改查"><a href="#HQL语句的增删改查" class="headerlink" title="HQL语句的增删改查"></a>HQL语句的增删改查</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">public static void main(String[] args) throws ParseException &#123;</span><br><span class="line">		// TODO Auto-generated method stub</span><br><span class="line">		Session session = HibernateSessionFactory.getSession();</span><br><span class="line">		HibernateSessionFactory.getSession().getTransaction().begin();</span><br><span class="line">		//session.getTransaction().begin();</span><br><span class="line">		//查询一条数据</span><br><span class="line">		//News news = (News) session.get(News.class, 1);</span><br><span class="line">		//session.getTransaction().commit();</span><br><span class="line">		//查询全部  hql语句</span><br><span class="line">		//String hql = &quot;from News&quot;;//-&gt;select n from News n;</span><br><span class="line">		//hql语句：名称：from News n where n.id=:id;   from News n where n.id=?;</span><br><span class="line">		//String hql = &quot;from News n where n.id=:id&quot;;</span><br><span class="line">		/*Query query = session.createQuery(hql);</span><br><span class="line">		query.setInteger(&quot;id&quot;, 1);</span><br><span class="line">		List&lt;News&gt; ls = query.list();</span><br><span class="line">		for (News news2 : ls) &#123;</span><br><span class="line">			System.out.println(news2.getTitle());</span><br><span class="line">		&#125;*/</span><br><span class="line">		//System.out.println(news.getTitle());</span><br><span class="line">		//修改</span><br><span class="line">		/*String title = &quot;update&quot;;</span><br><span class="line">		String hql = &quot;update News n set n.title=:title where n.id=:id&quot;;</span><br><span class="line">		Query query = session.createQuery(hql);</span><br><span class="line">		query.setString(&quot;title&quot;, title);</span><br><span class="line">		query.setInteger(&quot;id&quot;, 1);</span><br><span class="line">		query.executeUpdate();</span><br><span class="line">		HibernateSessionFactory.getSession().getTransaction().commit();;</span><br><span class="line">		HibernateSessionFactory.closeSession();*/</span><br><span class="line">		//删除</span><br><span class="line">		String hql = &quot;delete News n where n.id=:id&quot;;</span><br><span class="line">		Query query = session.createQuery(hql);</span><br><span class="line">		query.setInteger(&quot;id&quot;, 1);</span><br><span class="line">		query.executeUpdate();</span><br><span class="line">		HibernateSessionFactory.getSession().getTransaction().commit();;</span><br><span class="line">		HibernateSessionFactory.closeSession();</span><br><span class="line">		</span><br><span class="line">		</span><br><span class="line">		/*Date date = new Date();</span><br><span class="line">		SimpleDateFormat sdf = new SimpleDateFormat(&quot;&quot;);</span><br><span class="line">		new Timestamp(sdf.parse(&quot;2019-02-20 09:22:22&quot;).getTime());*/</span><br><span class="line">		//时间查询 大于等于    还需要将时间转换为long进行查询</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
 
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2019/03/24/Hibernate/" data-id="cjtmrgb3y0000k0s5e4a90tcr" class="article-share-link">Share</a>
-      
-      
-    </footer>
+  </article>
+  <div class="random-toc-area">
+  <button class="btn-hide-toc btn-hide-toc-show" style="display: none" onclick="TOCToggle()">Show TOC</button>
+  <button class="btn-hide-toc btn-hide-toc-hide" onclick="TOCToggle()">Hide TOC</button>
+  <div class="random-toc">
+    <h2>Table of Content</h2>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Hibernate-介绍"><span class="toc-text">Hibernate 介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Orm-称对象关系映射"><span class="toc-text">Orm 称对象关系映射</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#JPA"><span class="toc-text">JPA</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#JPA概述"><span class="toc-text">JPA概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sun引入新的JPA-ORM规范出于两个原因："><span class="toc-text">Sun引入新的JPA ORM规范出于两个原因：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#openSession和getCurrentSession区别"><span class="toc-text">openSession和getCurrentSession区别:</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#通过session的api提供的增删改查相关操作"><span class="toc-text">通过session的api提供的增删改查相关操作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#HQL语句"><span class="toc-text">HQL语句</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#HQL语句的增删改查"><span class="toc-text">HQL语句的增删改查</span></a></li></ol></li></ol>
   </div>
+</div>
+
   
-    
-<nav id="article-nav">
+<nav id="pagination">
   
+
   
-    <a href="/2019/03/21/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">Hello World</div>
-    </a>
+
+  
+    <a href="/2019/03/21/hello-world/" class="next">Next post Hello World &rarr;</a>
   
 </nav>
 
-  
-</article>
+  <!-- JiaThis Button BEGIN -->
 
-</section>
-        
-          <aside id="sidebar">
-  
-    
+<!-- JiaThis Button END -->
 
-  
-    
 
-  
-    
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
-    <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/03/">March 2019</a></li></ul>
+      
+      
     </div>
   </div>
 
-
-  
-    
-  <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
-    <div class="widget">
-      <ul>
-        
-          <li>
-            <a href="/2019/03/24/Hibernate/">Hibernate</a>
-          </li>
-        
-          <li>
-            <a href="/2019/03/21/hello-world/">Hello World</a>
-          </li>
-        
-      </ul>
+  <div id="bottom-outer">
+    <div id="bottom-inner">
+      Site by zl using
+      <a href="http://hexo.io">Hexo</a> & <a href="https://github.com/stiekel/hexo-theme-random">Random</a>
+      <br>
+      
     </div>
   </div>
+</div>
 
+</div>
+
+
+<div id="user-card">
+  <div class="center-field">
+    <img class="avatar" src="/img/touxiang.jpg">
+    <p id="description"></p>
+    <ul class="social-icon">
   
-</aside>
+  
+    <li>
+      <a href="https://github.com/zlzhanli">
         
-      </div>
-      <footer id="footer">
+          <i class="icon iconfont github">&#xe606;</i>
+        
+      </a>
+    </li>
   
-  <div class="outer">
-    <div id="footer-info" class="inner">
-      &copy; 2019 John Doe<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
-    </div>
+    <li>
+      <a href="http://weibo.com">
+        
+          <i class="icon iconfont weibo">&#xe602;</i>
+        
+      </a>
+    </li>
+  
+</ul>
   </div>
-</footer>
-    </div>
-    <nav id="mobile-nav">
+</div>
+
+
+<div id="btn-view">Hide</div>
+
+<script>
+// is trigger analytics / tongji script
+var isIgnoreHost = false;
+
+if(window && window.location && window.location.host) {
+  isIgnoreHost = ["localhost","127.0.0.1"].some(function(address){
+    return 0 === window.location.host.indexOf(address);
+  });
+}
+
+var isTriggerAnalytics = !( true && isIgnoreHost );
+
+</script>
+
+
+
+
   
-    <a href="/" class="mobile-nav-link">Home</a>
   
-    <a href="/archives" class="mobile-nav-link">Archives</a>
+    <script src="/js/jquery-2.2.3.min.js"></script>
   
-</nav>
-    
+    <script src="/js/vegas.min.js"></script>
+  
+    <script src="/js/random.js"></script>
+  
+    <script src="/js/highlight.pack.js"></script>
+  
+    <script src="/js/jquery.mousewheel.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox.pack.js"></script>
+  
+    <script src="/js/jquery.fancybox-thumbs.js"></script>
+  
+    <script src="/js/plyr.js"></script>
+  
 
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+<script>
+
+  // fancybox
+  var backgroundImages = [];
+  
+  $('#post').each(function(i){
+    $(this).find('img').each(function(){
+      if ($(this).parent().hasClass('fancybox') || $(this).parent().hasClass('fancybox-thumb')) return;
+      var alt = this.alt || this.title;
+      if (alt) $(this).after('<span class="caption">' + alt + '</span>');
+      $(this).wrap('<a href="' + this.src + '" title="' + alt + '" class="fancybox"></a>');
+    });
+    $(this).find('.fancybox').each(function(){
+      $(this).attr('rel', 'post' + i);
+    });
+  });
+  $(".fancybox").fancybox();
+
+var vegasConfig = {"preload­Image":true,"transition":["flash"],"timer":true,"delay":150000,"shuffle":true,"count":28};
+var unsplashConfig = {"gravity":"center"};
+// is show background images
+var turnoffBackgroundImage = false;
 
 
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
-  <script src="/fancybox/jquery.fancybox.pack.js"></script>
 
 
-<script src="/js/script.js"></script>
+var backgroundColor = "34495E";
 
+$(".fancybox-thumb").fancybox({
+  prevEffect: 'none',
+  nextEffect: 'none',
+  helpers: {
+    title: {
+      type: 'outside'
+    },
+    thumbs: {
+      width: 50,
+      height: 50
+    }
+  }
+});
 
-
-  </div>
+// show video with plyr
+$(".video-container iframe").each(function(i){
+  var url = $(this).attr('src');
+  var id = url.split('/').pop();
+  var plyrContainer = document.createElement('div');
+  plyrContainer.className = 'plyr';
+  var plyrElement = document.createElement('div');
+  plyrElement.dataset.videoId = id;
+  switch(true) {
+    case url.search('youtube.com') >= 0:
+      plyrElement.dataset.type = 'youtube';
+      break;
+    case url.search('vimeo.com') >= 0:
+      plyrElement.dataset.type = 'vimeo';
+      break;
+    default:
+      return;
+  };
+  plyrContainer.appendChild(plyrElement);
+  $(this).parent().html(plyrContainer);
+});
+plyr.setup('.plyr', {iconUrl: '/css/sprite.svg'});
+</script>
 </body>
 </html>
+
